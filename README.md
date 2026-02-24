@@ -46,6 +46,46 @@ Then visit `http://localhost:8000` (or the port shown).
 - **Scroll:** Scroll down the page to see scroll depth heatmaps
 - **Session recordings:** Your full session will be recorded for playback
 
+## Deploy to Contentstack Launch
+
+To test Clarity on a live URL via Contentstack Launch:
+
+### Option A: File upload
+
+1. **Create a zip** of the project (include `index.html` at the root):
+   ```bash
+   zip -r test-clarity.zip index.html README.md
+   ```
+
+2. **In Contentstack Launch:**
+   - Log in at [Contentstack](https://www.contentstack.com/login/) → **Launch**
+   - Click **+ New Project** → **Upload a file**
+   - Drag and drop the zip or browse to upload
+   - Click **Next**
+
+3. **Build and Output Settings** (static site):
+   - **Framework Preset:** Select **Other**
+   - **Output Directory:** `.` (or leave as root)
+   - **Build Command:** Leave **blank** (Launch skips build for static sites)
+
+4. Click **Deploy**
+
+5. Once deployed, visit the Launch URL (e.g. `https://your-project.launch.contentstack.com`) and interact with the page. Clarity will start collecting data.
+
+### Option B: GitHub
+
+1. Push this project to a GitHub repo
+2. In Launch → **+ New Project** → **Import from GitHub**
+3. Select the repo and branch
+4. Use the same Build settings as above (Framework: Other, Build Command: blank)
+5. Click **Deploy**
+
+### Verify on Launch
+
+After deployment, open your Launch URL, interact with the page, then check [clarity.microsoft.com](https://clarity.microsoft.com/) for recordings and heatmaps. Data may take a few minutes to appear.
+
+---
+
 ## CSP (Content Security Policy)
 
 If your site has a strict CSP, add these to allow Clarity:
@@ -59,3 +99,4 @@ connect-src https://www.clarity.ms https://clarity.ms
 
 - [Clarity Setup Docs](https://learn.microsoft.com/en-us/clarity/setup-and-installation/clarity-setup)
 - [Clarity Demo](https://clarity.microsoft.com/demo/projects/view/3t0wlogvdz/heatmaps)
+- [Contentstack Launch](https://www.contentstack.com/docs/developers/launch) — [Host a Static Site](https://www.contentstack.com/docs/developers/launch/host-a-static-site)
