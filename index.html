@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microsoft Clarity Test Page</title>
+  <!-- Microsoft Clarity - Replace YOUR_PROJECT_ID with your actual project ID from clarity.microsoft.com -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "YOUR_PROJECT_ID");
+  </script>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      line-height: 1.6;
+      color: #333;
+    }
+    h1 { color: #0078d4; }
+    .card {
+      background: #f5f5f5;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+    button, .btn {
+      background: #0078d4;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin: 0.25rem;
+    }
+    button:hover, .btn:hover { background: #106ebe; }
+    input, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .note {
+      background: #fff3cd;
+      padding: 1rem;
+      border-radius: 6px;
+      margin: 1rem 0;
+      border-left: 4px solid #ffc107;
+    }
+  </style>
+</head>
+<body>
+  <h1>Microsoft Clarity Test Page</h1>
+  <p>Use this page to try out Microsoft Clarity. Interact with the elements below—clicks, scrolls, and form inputs will be captured for heatmaps and session recordings.</p>
+
+  <div class="note">
+    <strong>Setup:</strong> Replace <code>YOUR_PROJECT_ID</code> in the script above with your project ID from <a href="https://clarity.microsoft.com/" target="_blank">clarity.microsoft.com</a> → Settings → Setup → Get tracking code.
+  </div>
+
+  <div class="card">
+    <h2>Interactive Elements</h2>
+    <p>Click these buttons to generate heatmap data:</p>
+    <button onclick="alert('Button 1 clicked!')">Primary Action</button>
+    <button onclick="alert('Button 2 clicked!')">Secondary Action</button>
+    <button onclick="alert('Button 3 clicked!')">Learn More</button>
+  </div>
+
+  <div class="card">
+    <h2>Sample Form</h2>
+    <p>Fill out this form to test form interaction tracking:</p>
+    <form onsubmit="event.preventDefault(); alert('Form submitted!');">
+      <label>Name: <input type="text" placeholder="Your name"></label>
+      <label>Email: <input type="email" placeholder="your@email.com"></label>
+      <label>Message: <textarea placeholder="Your message" rows="3"></textarea></label>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>Scroll Test</h2>
+    <p>Scroll down this page to see scroll depth in Clarity heatmaps. The content below helps create scrollable area.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+    <p>Scroll to the bottom to complete the test. More content here for scroll tracking...</p>
+  </div>
+
+  <p><small>Data is sent to <code>https://www.clarity.ms/collect</code>. If you have a strict CSP, allowlist this domain.</small></p>
+</body>
+</html>
